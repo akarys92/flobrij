@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Link, Outlet } from "react-router-dom";
+import whiteLogo from './assets/flobrij-white-only.png';
 
 
 function App() {
@@ -12,11 +13,20 @@ function App() {
     },
     navbar: {
       borderBottom: "solid 1px #d3d3d3", 
-      paddingLeft: "1rem"
+      paddingLeft: "1rem",
     },
     logo: {
       textDecoration: "none", 
-      color: "black"
+      color: "black",
+      display: "flex",
+      justifyContent: "left", 
+      flexDirection: "row", 
+      alignItems: "center"
+    },
+    logoImg: {
+      height: "4rem",
+      width: "4rem", 
+      paddingBottom: "1rem"
     },
     mainArea: {
       margin: "1rem", 
@@ -28,7 +38,10 @@ function App() {
   return (
     <div style={styles.container}>
         <nav style={styles.navbar}>
-          <Link style={styles.logo} to="/"><h1>FLOBRIJ</h1></Link>
+          <Link style={styles.logo} to="/">
+            <img style={styles.logoImg} src={whiteLogo} />
+            <h1>FLORBIJ</h1>
+          </Link>
         </nav>
         <div style={styles.mainArea}>
           <Outlet />
